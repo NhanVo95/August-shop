@@ -1,0 +1,46 @@
+extends layout
+
+block style
+  link(rel='stylesheet' href='/css/account.css')
+
+block content
+  #content
+    .container
+      h2
+        | Thông tin tài khoản đăng ký
+        small 
+      ul.responsive-table
+        li.table-header
+          .col.col-1 Bắt đầu
+          .col.col-2 Kết thúc
+          .col.col-3 Tên chương trình
+          .col.col-4 Amount Due
+          .col.col-5 Payment Status
+        li.table-row
+          .col.col-1(data-label='Bắt đầu') 42235
+          .col.col-2(data-label='Kết thúc') 42235
+          .col.col-3(data-label='Tên chương trình') John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe John Doe
+          .col.col-4(data-label='Amount') $350 
+          .col.col-5(data-label='Payment Status') Pending
+        li.table-row
+          .col.col-1(data-label='Job Id') 42442
+          .col.col-1(data-label='Job Id') 42442
+          .col.col-2(data-label='Customer Name') Jennifer Smith
+          .col.col-3(data-label='Amount') $220
+          .col.col-4(data-label='Payment Status') Pending
+        li.table-row
+          .col.col-1(data-label='Job Id') 42257
+          .col.col-2(data-label='Customer Name') John Smith
+          .col.col-3(data-label='Amount') $341
+          .col.col-4(data-label='Payment Status') Pending
+        li.table-row
+          .col.col-1(data-label='Job Id') 42311
+          .col.col-2(data-label='Customer Name') John Carpenter
+          .col.col-3(data-label='Amount') $115
+          .col.col-4(data-label='Payment Status') Pending
+
+
+
+block javascript 
+  script.
+    var event_in_month = {};

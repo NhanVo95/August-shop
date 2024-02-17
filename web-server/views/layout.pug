@@ -1,0 +1,65 @@
+doctype html
+
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    //if lt IE 9
+    meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+
+    title= title
+    meta(name='description' content='PMO - Sign up for media support')
+    meta(name='author' content='NhanVo - The August')
+
+    link(rel='icon' href='/img/fav.png' sizes='192x192')
+    link(rel='icon' href='/img/fav-32x32.png' sizes='32x32')
+
+    link(rel='stylesheet' href='/css/modern-nomalize.css')
+    link(rel='stylesheet' href='/css/layout.css')
+    link(rel='stylesheet' href='/font-awesome-4.7.0/css/font-awesome.min.css')
+    block style
+
+  body
+    .wrapper
+      sidebar
+        .logo 
+          p 
+            center Press and Media Office
+
+        .avatar
+          .avatar__img
+            img(src='https://picsum.photos/70' alt='avatar')
+          .avatar__name Vo Thanh Nhan
+
+        nav.menu#menu
+          a.menu__item.menu-calendar.menu__item--active(href='#')
+            i.menu__icon.fa.fa-calendar(aria-hidden="true")
+            span.menu__text Lịch
+          a.menu__item.menu-personal(href='#')
+            i.menu__icon.fa.fa-address-card-o(aria-hidden="true")
+            span.menu__text Thông tin cá nhân
+          a.menu__item.menu-register-event(href='#')
+            i.menu__icon.fa.fa-envelope(aria-hidden="true")
+            span.menu__text Đăng ký lịch
+          a.menu__item(href='#')
+            i.menu__icon.fa.fa-list(aria-hidden="true")
+            span.menu__text workout
+          a.menu__item(href='#')
+            i.menu__icon.fa.fa-bar-chart(aria-hidden="true")
+            span.menu__text goals
+          a.menu__item(href='#')
+            i.menu__icon.fa.fa-trophy(aria-hidden="true")
+            span.menu__text achivements
+          a.menu__item(href='#')
+            i.menu__icon.fa.fa-sliders(aria-hidden="true")
+            span.menu__text measurements
+        .copyright Copyright &#169; 2023 PMO
+
+      main
+        block content
+
+    script(type='text/javascript' src='/js/script.js')
+    script.
+      btnMenuToggle();
+
+    block javascript
