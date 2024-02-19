@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userInfoSchema = new Schema({
+const adminSchema = new Schema({
   _id: {
     type: Schema.Types.ObjectId,
+  },
+  name: {
+    type: String,
+    required: true,
   },
   email: {
     type: String,
@@ -13,18 +17,19 @@ const userInfoSchema = new Schema({
     type: String,
     required: true,
   },
-  unitName: {
+  password: {
     type: String,
     required: true,
   },
-  role: {
+  salt: {
     type: String,
     required: true,
   },
   createdBy: {
-    type: String,
-    default: "Admin",
+    type: Schema.Types.ObjectId,
     required: false,
+    default: "NhanVo",
+    ref: "admin",
   },
   createdOn: {
     type: Date,
@@ -33,4 +38,4 @@ const userInfoSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("userInfo", userInfoSchema, "userInfoList");
+module.exports = mongoose.model("admin", adminSchema);
