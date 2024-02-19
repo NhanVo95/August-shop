@@ -1,12 +1,19 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const clientSchema = new Schema({
+  _id: {
+    type: Schema.Types.ObjectId,
+  },
   name: {
     type: String,
     required: true,
   },
   email: {
+    type: String,
+    required: true,
+  },
+  phone: {
     type: String,
     required: true,
   },
@@ -18,20 +25,15 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  permission: {
+  address: {
     type: String,
-    required: true,
+    required: false,
   },
-  fee: {
-    type: String,
-    default: "false",
-    require: false,
-  },
-  userID: {
-    type: Schema.Types.ObjectId,
-    required: true,
-    ref: "userInfo",
+  createdOn: {
+    type: Date,
+    required: false,
+    default: Date.now,
   },
 });
 
-module.exports = mongoose.model("user", userSchema, "userList");
+module.exports = mongoose.model("client", clientSchema);
