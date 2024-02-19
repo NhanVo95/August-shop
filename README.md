@@ -18,8 +18,10 @@ git checkout develop
 
 ```
 git checkout -b feature/1-something
+git push --set-upstream origin feature/1-something
 git add .
 git commit -m "#1 - something"
+git push
 ```
 
 ## API list:
